@@ -7,7 +7,14 @@
     "build": "npm run build -w @json-feed-types/common && npm run build -w @json-feed-types/1_1",
     "dev": "npm run dev --workspaces --if-present",
     "clean": "npm run clean --workspaces --if-present",
-    "format": "prettier . -w"
+    "version:patch": "npm version patch --workspaces --no-git-tag-version",
+    "version:minor": "npm version minor --workspaces --no-git-tag-version",
+    "version:major": "npm version major --workspaces --no-git-tag-version",
+    "release:patch": "npm run version:patch && npm run build && git add . && git commit -m 'chore: bump patch version' && git tag v$(node -p \"require('./packages/common/package.json').version\")",
+    "release:minor": "npm run version:minor && npm run build && git add . && git commit -m 'chore: bump minor version' && git tag v$(node -p \"require('./packages/common/package.json').version\")",
+    "release:major": "npm run version:major && npm run build && git add . && git commit -m 'chore: bump major version' && git tag v$(node -p \"require('./packages/common/package.json').version\")",
+    "prepack": "npm run build",
+    "test": "npm test --workspaces --if-present"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^11.1.6",
