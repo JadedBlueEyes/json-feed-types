@@ -1,0 +1,5 @@
+export type { default } from './types/feed'
+export type { default as Attachment } from './types/attachment'
+export type { default as Author } from './types/author'
+export type { default as Hub } from './types/hub'
+export type { default as Item } from './types/item'

@@ -119,6 +119,9 @@ out
 .nuxt
 dist
 
+# Package build output
+packages/*/dist
+
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and not Next.js
@@ -155,3 +158,5 @@ dist
 .webpack/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,macos
+
+.rollup.cache
